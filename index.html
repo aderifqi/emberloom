@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMBERLOOM: Building Digital Products & AI Solutions</title>
+    <meta name="description" content="We help businesses automate, scale, and innovate through technology, AI, and digital products.">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f7f4ef;
+            --surface: #ffffff;
+            --ink: #251941;
+            --muted: #695f83;
+            --line: rgba(57, 37, 95, 0.12);
+            --purple: #6d42ff;
+            --pink: #ff65c0;
+            --lime: #dfff6e;
+            --sky: #bfeeff;
+            --rose: #f4a6de;
+            --radius-xl: 34px;
+            --radius-lg: 26px;
+            --radius-md: 18px;
+            --shadow: 0 28px 70px rgba(35, 25, 65, 0.08);
+            --max: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(109, 66, 255, 0.08), transparent 24%),
+                radial-gradient(circle at top right, rgba(255, 101, 192, 0.08), transparent 20%),
+                var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            padding-top: 100px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .container {
+            width: min(calc(100% - 32px), var(--max));
+            margin: 0 auto;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--purple);
+            background: rgba(109, 66, 255, 0.08);
+            border: 1px solid rgba(109, 66, 255, 0.12);
+            margin-bottom: 16px;
+        }
+
+        .pill::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-head {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .section-head.split {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            align-items: end;
+            gap: 48px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.6rem);
+            line-height: 1.1; /* Increased from 0.94 for better spacing */
+            letter-spacing: -0.06em;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.4vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: clamp(1.15rem, 2vw, 1.6rem);
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+        }
+
+        h4 {
+            font-size: 1.05rem;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .copy, .lede {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 52px;
+            padding: 0 28px;
+            border-radius: 999px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 10px;
+        }
+
+        .btn-brand {
+            background: linear-gradient(135deg, #835dff, #5c31ff);
+            color: white;
+            box-shadow: 0 12px 30px rgba(92, 49, 255, 0.28);
+        }
+
+        .btn-brand:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(92, 49, 255, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--ink);
+        }
+
+        .btn-outline:hover {
+            background: var(--line);
+        }
+
+        /* Mini Navbar — Light Floating Design */
+        header {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: calc(100% - 32px);
+            max-width: fit-content;
+            background: rgba(247, 244, 239, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--line);
+            border-radius: 9999px;
+            padding: 12px 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(35, 25, 65, 0.1);
+        }
+
+        header.is-open {
+            border-radius: 28px;
+            width: calc(100% - 32px);
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        header .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 32px;
+            padding: 0 12px;
+        }
+
+        .brand-mini img {
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .animated-link {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            height: 22px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .animated-link > div {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .animated-link span:first-child { color: var(--muted); }
+        .animated-link span:last-child { color: var(--purple); }
+
+        .animated-link:hover > div {
+            transform: translateY(-50%);
+        }
+
+        .header-actions {
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @media (min-width: 800px) {
+            .header-actions { display: flex; }
+        }
+
+        .btn-mini {
+            height: 40px;
+            padding: 0 16px;
+            font-size: 13px;
+        }
+
+        .btn-login-mini {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--line);
+            border-radius: 9999px;
+            transition: all 0.2s;
+        }
+
+        .btn-signup-mini {
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 800;
+            color: white;
+            background: linear-gradient(135deg, #835dff, #5c31ff);
+            border-radius: 9999px;
+            box-shadow: 0 4px 12px rgba(92, 49, 255, 0.2);
+        }
+
+        .mobile-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            color: var(--ink);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            width: 100%;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .is-open .mobile-menu {
+            max-height: 400px;
+            opacity: 1;
+            padding-top: 24px;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            padding: 120px 0 60px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-clouds {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cloud {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .cloud-1 { top: 15%; left: 10%; width: 120px; animation-duration: 25s; }
+        .cloud-2 { top: 10%; right: 15%; width: 160px; animation-duration: 30s; animation-delay: -5s; }
+        .cloud-3 { bottom: 20%; left: 5%; width: 100px; animation-duration: 22s; animation-delay: -2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -20px); }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero-visual {
+            margin-top: 60px;
+            perspective: 1200px;
+        }
+
+        .hero-media-wrap {
+            position: relative;
+            width: min(100%, 1000px);
+            margin: 0 auto;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(180deg, rgba(205, 227, 255, 0.68), rgba(255, 221, 191, 0.7));
+            padding: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .hero-media-wrap video {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+        }
+
+        /* Metrics Bar */
+        .metrics {
+            padding: 60px 0;
+            background: transparent;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .metrics-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px 64px;
+        }
+
+        .metric-item { text-align: center; }
+        .metric-value { display: block; font-size: 1.5rem; font-weight: 800; color: var(--ink); }
+        .metric-label { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* Card Styles */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .card {
+            display: grid;
+            gap: 18px;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid var(--line);
+            box-shadow: 0 12px 36px rgba(35, 25, 65, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--purple);
+            box-shadow: var(--shadow);
+        }
+
+        .card-media { width: 100%; border-radius: 16px; background: #fff; border: 1px solid var(--line); }
+
+        .feature-list { list-style: none; display: grid; gap: 12px; }
+        .feature-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; }
+        .feature-list li::before { content: "→"; color: var(--purple); font-weight: 800; }
+
+        /* Testimonials */
+        .testimonial {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 48px;
+            align-items: center;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+        }
+        .testimonial.lime { background: var(--lime); }
+        .testimonial.rose { background: var(--rose); }
+        .testimonial.sky { background: var(--sky); }
+        .testimonial img { border-radius: 24px; width: 100%; }
+        .testimonial blockquote { margin: 0 0 18px; font-size: clamp(1.2rem, 2.4vw, 2rem); line-height: 1.08; letter-spacing: -0.045em; font-weight: 800; color: var(--ink); }
+
+        /* Why Choose */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+        .why-item h4 { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .why-item h4::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--purple); }
+
+        /* Tech Stack */
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .tech-badge { padding: 10px 20px; background: white; border: 1px solid var(--line); border-radius: 12px; font-size: 14px; font-weight: 700; color: var(--ink); box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+
+        /* Process / Integration Grid */
+        .integration-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-top: 40px; }
+        .mini-card { display: grid; gap: 12px; padding: 24px; border-radius: 22px; background: rgba(255, 255, 255, 0.76); border: 1px solid var(--line); }
+        .mini-card .icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: white; border: 1px solid rgba(57, 37, 95, 0.08); font-weight: 800; font-size: 20px; color: var(--purple); }
+
+        /* Final CTA */
+        .final-cta {
+            position: relative;
+            background: rgba(255, 255, 255, 0.76);
+            color: var(--ink);
+            text-align: center;
+            border-radius: var(--radius-xl);
+            padding: 100px 48px;
+            margin: 40px 0;
+            box-shadow: 0 12px 36px rgba(35, 25, 65, 0.06);
+            border: 1px solid var(--line);
+        }
+
+        .final-cta h2 { color: var(--ink); margin-bottom: 24px; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.04em; }
+        .final-cta p { color: var(--muted); margin-bottom: 40px; font-size: 1.25rem; font-weight: 500; }
+
+        /* Footer */
+        footer { padding: 80px 0 40px; border-top: 1px solid var(--line); margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 48px; }
+        .footer-list { list-style: none; display: grid; gap: 12px; margin-top: 16px; }
+        .footer-list a { color: var(--muted); font-size: 0.95rem; }
+        .footer-list a:hover { color: var(--ink); }
+
+        /* Outlined Section Overrides */
+        #about .pill, #showcase .pill, #products .pill {
+            background: transparent;
+            border-color: var(--purple);
+        }
+
+        #about .card, #showcase .card, #products .card, #why .card {
+            background: transparent;
+            border-color: var(--ink);
+            box-shadow: none;
+            width: fit-content;
+            max-width: 100%;
+            justify-self: start; /* Prevents grid stretching */
+            text-align: left; /* Ensure content is left-aligned */
+        }
+
+        /* Ensure paragraphs inside these cards don't force centering or huge widths */
+        #about .card .lede, #showcase .card .lede, #products .card .lede, #why .card .lede {
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        /* Feature Row Hover */
+        .feature-row:hover {
+            padding-left: 20px !important;
+            background: linear-gradient(90deg, rgba(255,255,255,0.4), transparent);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .section-head.split, .testimonial, .footer-grid { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="/" class="brand-mini">
+                <img src="icon/emberloom-logo.png" alt="EMBERLOOM">
+            </a>
+
+            <nav>
+                <a href="#products" class="animated-link"><div><span>Products</span><span>Products</span></div></a>
+                <a href="#services" class="animated-link"><div><span>Services</span><span>Services</span></div></a>
+                <a href="#technology" class="animated-link"><div><span>Technology</span><span>Technology</span></div></a>
+                <a href="#about" class="animated-link"><div><span>About</span><span>About</span></div></a>
+                <a href="#contact" class="animated-link"><div><span>Contact</span><span>Contact</span></div></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero-section">
+            <div class="hero-clouds">
+                <svg class="cloud cloud-1" viewBox="0 0 162 92" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M47.2 10.3c1.1 2.7.8 6.2.2 8.4l-.8 3.3 3-1.6c.5-.3 3-1.3 6.2-2.2 3.2-.9 6.8-1.6 9.5-1.3 1.4.1 2.1.4 2.4.6.2.1.2.1.2.1s0 .1 0 .1c0 .2-.1.6-.5 1.2-.4.6-.9 1.2-1.5 1.9-.2.3-.4.5-.6.8-.4.4-.8.8-1.1 1.2-.5.6-1.1 1.4-1.4 2.1-.2.4-.3.8-.3 1.3 0 .6.3 1.2.7 1.6.4.4.9.6 1.4.7.5.1 1.1.1 1.6.1 4.2-.1 13.5.8 19.6 2.2 1.5.3 2.8.7 3.7 1.1.2.1.4.2.5.3-.7.3-1.9.7-3.8 1.2-3.3.8-8.8 1.3-15.6 1.5-6.8.3-14.8.3-23-.1-11.3-.1-23-.5-32.9-.8-4.6-.1-8.8-.2-12.4-.3l-.1 3s-.1 3-.1 3c3.5.1 7.7.2 12.3.3 9.9.3 21.7.7 33 .8 8.3.1 16.3 0 23.1-.3 6.8-.3 12.6-.8 16.3-1.6 2.2-.5 3.9-1.1 5-1.7.5-.3 1-.7 1.4-1.3.3-.6.4-1.4.1-2.1-.3-.6-.8-1-1.2-1.3-.4-.3-1-.6-1.5-.8-1.1-.5-2.5-.9-4.1-1.3-6.4-1.4-15.9-2.3-20.4-2.2-.1 0-.2 0-.4 0 .2-.2.4-.5.6-.8.3-.4.6-.8.9-1.1.3-.3.5-.6.8-.9.6-.7 1.2-1.5 1.7-2.3.5-.7 1-1.6 1-2.6 0-1.1-.5-2.1-1.5-2.8-.9-.6-2.1-.9-3.7-1.1-3.3-.3-7.4.5-10.7 1.4-1.6.4-3 .9-4.2 1.3.3-2.3.2-5-.8-7.4-.7-1.8-2-3.4-4-4.4-2-.9-4.6-1.1-7.8-.4-7.5 1.6-17 4.8-24.2 9.2-3.6 2.2-6.8 4.8-8.9 7.7-2.1 3-3.1 6.3-2.2 10 0 0 2.9-.7 2.9-.7-.6-2.6 0-5.1 1.7-7.5 1.7-2.5 4.5-4.8 7.9-6.9 6.9-4.2 16-7.3 23.3-8.9 2.7-.6 4.6-.4 5.8.2 1.2.6 2 1.5 2.5 2.8z" fill="#47B2FF"/></svg>
+                <svg class="cloud cloud-2" viewBox="0 0 162 92" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M47.2 10.3c1.1 2.7.8 6.2.2 8.4l-.8 3.3 3-1.6c.5-.3 3-1.3 6.2-2.2 3.2-.9 6.8-1.6 9.5-1.3 1.4.1 2.1.4 2.4.6.2.1.2.1.2.1s0 .1 0 .1c0 .2-.1.6-.5 1.2-.4.6-.9 1.2-1.5 1.9-.2.3-.4.5-.6.8-.4.4-.8.8-1.1 1.2-.5.6-1.1 1.4-1.4 2.1-.2.4-.3.8-.3 1.3 0 .6.3 1.2.7 1.6.4.4.9.6 1.4.7.5.1 1.1.1 1.6.1 4.2-.1 13.5.8 19.6 2.2 1.5.3 2.8.7 3.7 1.1.2.1.4.2.5.3-.7.3-1.9.7-3.8 1.2-3.3.8-8.8 1.3-15.6 1.5-6.8.3-14.8.3-23-.1-11.3-.1-23-.5-32.9-.8-4.6-.1-8.8-.2-12.4-.3l-.1 3s-.1 3-.1 3c3.5.1 7.7.2 12.3.3 9.9.3 21.7.7 33 .8 8.3.1 16.3 0 23.1-.3 6.8-.3 12.6-.8 16.3-1.6 2.2-.5 3.9-1.1 5-1.7.5-.3 1-.7 1.4-1.3.3-.6.4-1.4.1-2.1-.3-.6-.8-1-1.2-1.3-.4-.3-1-.6-1.5-.8-1.1-.5-2.5-.9-4.1-1.3-6.4-1.4-15.9-2.3-20.4-2.2-.1 0-.2 0-.4 0 .2-.2.4-.5.6-.8.3-.4.6-.8.9-1.1.3-.3.5-.6.8-.9.6-.7 1.2-1.5 1.7-2.3.5-.7 1-1.6 1-2.6 0-1.1-.5-2.1-1.5-2.8-.9-.6-2.1-.9-3.7-1.1-3.3-.3-7.4.5-10.7 1.4-1.6.4-3 .9-4.2 1.3.3-2.3.2-5-.8-7.4-.7-1.8-2-3.4-4-4.4-2-.9-4.6-1.1-7.8-.4-7.5 1.6-17 4.8-24.2 9.2-3.6 2.2-6.8 4.8-8.9 7.7-2.1 3-3.1 6.3-2.2 10 0 0 2.9-.7 2.9-.7-.6-2.6 0-5.1 1.7-7.5 1.7-2.5 4.5-4.8 7.9-6.9 6.9-4.2 16-7.3 23.3-8.9 2.7-.6 4.6-.4 5.8.2 1.2.6 2 1.5 2.5 2.8z" fill="#FF65C0"/></svg>
+                <svg class="cloud cloud-3" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.9 7.8c-1.2 2.6-1.4 5.5-1.3 7.5l-2.9.6c-1-2.4-3.3-3.9-6.1-4.8C5.8 10.2 2.7 10 .8 10.1l-.1-3c2.2-.1 5.6.1 8.8 1.1 1.9.6 3.8 1.5 5.4 2.9.2-1.5.6-3.1 1.3-4.6 1.5-3.1 4.1-6 8.7-6.5l.3 3c-3.2.4-5.1 2.3-6.3 4.8z" fill="#9E47FF"/></svg>
+            </div>
+
+            <div class="container hero-content">
+                <span class="pill">Startup Studio</span>
+                <h1 style="margin-top: 16px;">Building Digital Products, <br> AI Solutions, and <br> Future-Ready Experiences.</h1>
+                <p class="copy" style="margin-top: 24px;">We help businesses automate, scale, and innovate <br> through technology, AI, and digital products.</p>
+                <div style="display: flex; justify-content: center; gap: 16px; margin-top: 40px;">
+                    <a href="#products" class="btn btn-brand">Explore Products</a>
+                    <a href="#contact" class="btn btn-outline" style="height: 52px;">Start a Project</a>
+                </div>
+                <div class="hero-visual" id="hero-media-container">
+                    <div class="hero-media-wrap" id="parallax-element">
+                        <video loop playsinline muted autoplay>
+                            <source src="https://static.adora.ai/files/kgwq2lfr/production/6642ec470159d5c904557ebff6ca43556ffd61c0.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-item"><span class="metric-value">5+</span><span class="metric-label">Products in Development</span></div>
+                    <div class="metric-item"><span class="metric-value">10+</span><span class="metric-label">Technologies Used</span></div>
+                    <div class="metric-item"><span class="metric-value">100%</span><span class="metric-label">Remote-Ready</span></div>
+                    <div class="metric-item"><span class="metric-value">Global</span><span class="metric-label">Collaboration</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-head ">
+                    <div><span class="pill">What We Do</span><h2>From Concept to Code, we build the future.</h2></div>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Product Studio</h3>
+                        <p class="lede" style="font-size: 15px;">End-to-end digital product creation for modern markets.</p>
+                        <ul class="feature-list"><li>SaaS Platforms</li><li>Mobile Applications</li><li>Web Platforms</li></ul>
+                    </div>
+                    <div class="card">
+                        <h3>AI Automation</h3>
+                        <p class="lede" style="font-size: 15px;">Intelligent workflows that save time and increase scale.</p>
+                        <ul class="feature-list"><li>AI Agents</li><li>Chatbots</li><li>Workflow Automation</li></ul>
+                    </div>
+                    <div class="card">
+                        <h3>Digital Services</h3>
+                        <p class="lede" style="font-size: 15px;">Specialized expertise to elevate your current brand.</p>
+                        <ul class="feature-list"><li>Modern Development</li><li>UI/UX Design</li><li>Branding & Strategy</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="showcase">
+            <div class="container">
+                <div class="section-head split">
+                    <div><span class="pill">Concept Showcase</span><h2>Selected Build Directions</h2></div>
+                    <p class="lede">Visual explorations of the capability and quality we bring to every build.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card" style="padding: 24px; border-radius: 28px;">
+                        <div style="height: 180px; background: linear-gradient(135deg, var(--sky), #fff); border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--line); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 70%; height: 60%; background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--line);">
+                                <div style="padding: 10px; border-bottom: 1px solid var(--line); display: flex; gap: 4px;"><div style="width: 4px; height: 4px; border-radius: 50%; background: var(--line);"></div><div style="width: 4px; height: 4px; border-radius: 50%; background: var(--line);"></div><div style="width: 4px; height: 4px; border-radius: 50%; background: var(--line);"></div></div>
+                            </div>
+                        </div>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Product Concept</span>
+                        <h3 style="font-size: 1.25rem;">Enterprise Analytics</h3>
+                        <p class="lede" style="font-size: 14px; margin-top: 8px; color: var(--muted);">Advanced data visualization and reporting systems.</p>
+                    </div>
+                    <div class="card" style="padding: 24px; border-radius: 28px;">
+                        <div style="height: 180px; background: linear-gradient(135deg, var(--rose), #fff); border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--line); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                             <div style="width: 40%; height: 75%; background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--line);"></div>
+                        </div>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">UI Exploration</span>
+                        <h3 style="font-size: 1.25rem;">Modern Lifestyle UI</h3>
+                        <p class="lede" style="font-size: 14px; margin-top: 8px; color: var(--muted);">Fluid, interaction-heavy mobile app experiences.</p>
+                    </div>
+                    <div class="card" style="padding: 24px; border-radius: 28px;">
+                        <div style="height: 180px; background: linear-gradient(135deg, var(--lime), #fff); border-radius: 20px; margin-bottom: 24px; border: 1px solid var(--line); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                             <div style="width: 50px; height: 50px; background: var(--purple); border-radius: 50%; box-shadow: 0 0 20px var(--purple); opacity: 0.2;"></div>
+                        </div>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">AI Research</span>
+                        <h3 style="font-size: 1.25rem;">Support Assistant</h3>
+                        <p class="lede" style="font-size: 14px; margin-top: 8px; color: var(--muted);">Intelligent natural language processing workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="products">
+            <div class="container">
+                <div class="section-head split">
+                    <div><span class="pill">Featured Products</span><h2>Our Current Builds</h2></div>
+                    <p class="lede">Discover the internal products we're bringing to life.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card" style="padding: 32px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 48px; height: 48px; background: rgba(109, 66, 255, 0.08); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(109, 66, 255, 0.12);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8V12L14 14" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <span style="font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 99px; border: 1px solid #0369a1; color: #0369a1; text-transform: uppercase;">Building</span>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">RAHAB</h3>
+                        <p class="lede" style="font-size:15px; color: var(--muted);">Find the best places for every activity. Your companion for discovery and local exploration.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 48px; height: 48px; background: rgba(255, 101, 192, 0.08); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(255, 101, 192, 0.12);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="var(--pink)" stroke-width="2"/><path d="M12 8V16M8 12H16" stroke="var(--pink)" stroke-width="2" stroke-linecap="round"/></svg>
+                            </div>
+                            <span style="font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--muted); color: var(--muted); text-transform: uppercase;">Planned</span>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">AI Automation</h3>
+                        <p class="lede" style="font-size:15px; color: var(--muted);">Platform for intelligent business workflows. Automating repetitive tasks at scale.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px;">
+                            <div style="width: 48px; height: 48px; background: rgba(223, 255, 110, 0.15); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(57, 37, 95, 0.08);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3H21V21H3V3Z" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9H21" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21V9" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <span style="font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--muted); color: var(--muted); text-transform: uppercase;">Planned</span>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">Discovery Market</h3>
+                        <p class="lede" style="font-size:15px; color: var(--muted);">Digital Marketplace for modern service discovery. Connecting creators with opportunities.</p>
+                    </div>
+                </div>
+                <div style="margin-top:60px; text-align:center;">
+                    <a href="#" class="btn btn-outline" style="border-radius: 99px; height: 48px; font-size: 14px;">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="why">
+            <div class="container">
+                <div class="section-head split" style="margin-bottom: 60px;">
+                    <div><h2>Why Choose Emberloom</h2></div>
+                    <p class="lede">We don't just write code. We partner with you to build sustainable, scalable digital businesses.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0;">
+                    <div class="feature-row" style="display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); align-items: flex-start; transition: all 0.3s ease;">
+                        <span style="font-size: 14px; font-weight: 800; color: var(--purple); width: 40px; flex-shrink: 0;">01</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 12px;">Product Mindset</h3>
+                            <p class="lede" style="max-width: 600px; margin: 0; text-align: left;">We build solutions, not just projects. Your business goal is our technical blueprint, ensuring every feature drives real value.</p>
+                        </div>
+                    </div>
+                    <div class="feature-row" style="display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); align-items: flex-start; transition: all 0.3s ease;">
+                        <span style="font-size: 14px; font-weight: 800; color: var(--pink); width: 40px; flex-shrink: 0;">02</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 12px;">AI-First Approach</h3>
+                            <p class="lede" style="max-width: 600px; margin: 0; text-align: left;">Automation embedded in every solution. We design systems that leverage intelligence to ensure future scalability and efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="feature-row" style="display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); align-items: flex-start; transition: all 0.3s ease;">
+                        <span style="font-size: 14px; font-weight: 800; color: var(--sky); width: 40px; flex-shrink: 0;">03</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 12px;">Scalable Technology</h3>
+                            <p class="lede" style="max-width: 600px; margin: 0; text-align: left;">Built for growth from day one using modern, robust frameworks that can handle your next million users without rewriting.</p>
+                        </div>
+                    </div>
+                    <div class="feature-row" style="display: flex; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); align-items: flex-start; transition: all 0.3s ease;">
+                        <span style="font-size: 14px; font-weight: 800; color: var(--lime); width: 40px; flex-shrink: 0;">04</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 12px;">Global Collaboration</h3>
+                            <p class="lede" style="max-width: 600px; margin: 0; text-align: left;">Remote-ready workflows connecting top-tier talent with clients worldwide, providing transparent and asynchronous communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="technology">
+            <div class="container">
+                <div class="section-head" style="text-align:center; margin-bottom: 24px;"><h2>Technology Stack</h2></div>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--muted); font-size: 1.25rem; font-weight: 600; line-height: 2;">
+                    React &nbsp;&middot;&nbsp; Next.js &nbsp;&middot;&nbsp; Node.js &nbsp;&middot;&nbsp; Laravel &nbsp;&middot;&nbsp; Flutter &nbsp;&middot;&nbsp; Python &nbsp;&middot;&nbsp; OpenAI &nbsp;&middot;&nbsp; Supabase &nbsp;&middot;&nbsp; PostgreSQL &nbsp;&middot;&nbsp; AWS
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head"><h2>How We Build</h2></div>
+                <div class="integration-grid">
+                    <div class="mini-card">
+                        <div class="icon">01</div>
+                        <h4>Discover</h4>
+                        <p class="lede" style="font-size:14px;">Understand business goals, target audience, and technical requirements.</p>
+                    </div>
+                    <div class="mini-card">
+                        <div class="icon">02</div>
+                        <h4>Design</h4>
+                        <p class="lede" style="font-size:14px;">Map the user experience and design the system architecture for scalability.</p>
+                    </div>
+                    <div class="mini-card">
+                        <div class="icon">03</div>
+                        <h4>Develop</h4>
+                        <p class="lede" style="font-size:14px;">Write clean, maintainable code to build the interface, backend, and AI automation.</p>
+                    </div>
+                    <div class="mini-card">
+                        <div class="icon">04</div>
+                        <h4>Launch</h4>
+                        <p class="lede" style="font-size:14px;">Rigorous testing, optimization, and seamless deployment to production.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-head split">
+                    <div><span class="pill">Our Expertise</span><h2 style="margin-top:14px;">Let's Build Together</h2></div>
+                    <p class="lede">Comprehensive digital services tailored for startups and scaling businesses.</p>
+                </div>
+                <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                    <div class="card" style="padding: 32px; display: flex; flex-direction: column;">
+                        <div style="width: 48px; height: 48px; background: rgba(109, 66, 255, 0.08); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(109, 66, 255, 0.12); margin-bottom: 12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" stroke="var(--purple)" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="var(--purple)" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="var(--purple)" stroke-width="2"/></svg>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">Web Development</h3>
+                        <p class="lede" style="font-size:14px; margin-bottom: 0;">Custom websites and complex web platforms built for scale.</p>
+                    </div>
+                    <div class="card" style="padding: 32px; display: flex; flex-direction: column;">
+                        <div style="width: 48px; height: 48px; background: rgba(255, 101, 192, 0.08); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(255, 101, 192, 0.12); margin-bottom: 12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="2" width="14" height="20" rx="2" stroke="var(--pink)" stroke-width="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke="var(--pink)" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">Mobile Apps</h3>
+                        <p class="lede" style="font-size:14px; margin-bottom: 0;">Native and cross-platform Android & iOS applications.</p>
+                    </div>
+                    <div class="card" style="padding: 32px; display: flex; flex-direction: column;">
+                        <div style="width: 48px; height: 48px; background: rgba(71, 178, 255, 0.1); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(71, 178, 255, 0.2); margin-bottom: 12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#0369a1" stroke-width="2"/><path d="M12 8V16M8 12H16" stroke="#0369a1" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">AI Automation</h3>
+                        <p class="lede" style="font-size:14px; margin-bottom: 0;">AI-powered business solutions and intelligent agents.</p>
+                    </div>
+                    <div class="card" style="padding: 32px; display: flex; flex-direction: column;">
+                        <div style="width: 48px; height: 48px; background: rgba(223, 255, 110, 0.2); border-radius: 12px; display: grid; place-items: center; border: 1px solid rgba(57, 37, 95, 0.08); margin-bottom: 12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 style="margin-bottom: 8px;">MVP Development</h3>
+                        <p class="lede" style="font-size:14px; margin-bottom: 0;">Launch faster with lean, focused, and scalable products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="final-cta">
+                    <h2>Have an idea worth building?</h2>
+                    <p>Let’s turn it into a scalable digital product.</p>
+                    <div style="display: flex; justify-content: center; gap: 16px;">
+                        <a href="#" class="btn btn-brand" style="height: 56px; font-size: 1.1rem; padding: 0 32px;">Book a Call</a>
+                        <a href="#" class="btn btn-outline" style="height: 56px; font-size: 1.1rem; padding: 0 32px;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div><img src="icon/emberloom-logo.png" alt="EMBERLOOM" width="112"><p style="margin-top: 20px; color: var(--muted); font-size: 14px;">Digital products, AI solutions, and future-ready experiences.</p></div>
+                <div><strong>Products</strong><ul class="footer-list"><li><a href="#">RAHAB</a></li></ul></div>
+                <div><strong>Services</strong><ul class="footer-list"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile Apps</a></li><li><a href="#services">AI Automation</a></li></ul></div>
+                <div><strong>Contact</strong><ul class="footer-list"><li><a href="mailto:hello@emberloom.com">hello@emberloom.com</a></li><li><a href="#">Remote / Worldwide</a></li></ul></div>
+            </div>
+            <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: var(--muted); font-size: 0.9rem;">
+                <div>© 2026 EMBERLOOM. All rights reserved.</div>
+                <div style="display: flex; gap: 24px;"><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Upwork</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Parallax
+        const heroSection = document.getElementById('hero-section');
+        const parallaxEl = document.getElementById('parallax-element');
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width/2) / 50;
+            const y = (e.clientY - rect.top - rect.height/2) / 50;
+            parallaxEl.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+        });
+        heroSection.addEventListener('mouseleave', () => { parallaxEl.style.transform = `rotateX(0deg) rotateY(0deg)`; });
+    </script>
+</body>
+</html>
