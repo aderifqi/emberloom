@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Emberloom</title>
+  <meta name="description" content="Projects page for Emberloom.">
+  <link href="assets/images/QcKlylrB9c5EDMQItpmmeMQc.svg" rel="icon" media="(prefers-color-scheme: light)">
+  <link href="assets/images/QcKlylrB9c5EDMQItpmmeMQc.svg" rel="icon" media="(prefers-color-scheme: dark)">
+  <style>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, rgba(12, 18, 28, 0.2) 0%, rgba(12, 18, 28, 0.42) 100%),
+        url("assets/media/dashboard-lynq.jpg") center center / cover no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(6, 181, 212, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(255, 90, 54, 0.08), transparent 18%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #app {
+      position: relative;
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      padding: 24px 20px;
+    }
+
+    .project-name {
+      position: fixed;
+      left: 32px;
+      bottom: 36px;
+      z-index: 3;
+      margin: 0;
+      max-width: min(560px, calc(100vw - 180px));
+      display: grid;
+      gap: 14px;
+      color: #fff;
+    }
+
+    .project-category {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0;
+      font-family: Inter Display, "Inter Display Placeholder", Inter, "Inter Placeholder", sans-serif;
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .project-description {
+      margin: 0;
+      max-width: 36rem;
+      color: rgba(255, 255, 255, 0.84);
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .project-detail {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      color: #fff;
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-detail:hover,
+    .project-detail:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.46);
+      outline: none;
+    }
+
+    .project-controls {
+      position: fixed;
+      right: 32px;
+      bottom: 36px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 46px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      color: #fff;
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-control:hover,
+    .project-control:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.46);
+      outline: none;
+    }
+
+    .project-control:active {
+      transform: scale(0.98);
+    }
+
+    .project-counter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      color: #fff;
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .project-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .project-content.is-changing {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .nav-wrap {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      z-index: 10;
+      width: min(60%, 720px);
+      transform: translateX(-50%);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      width: 100%;
+      padding: 10px 25px;
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 100px;
+      background: linear-gradient(180deg, rgba(246, 241, 252, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      box-shadow:
+        0 0.796px 0.796px -1px rgba(0, 0, 0, 0.04),
+        0 2.415px 2.415px -2px rgba(0, 0, 0, 0.04),
+        0 6.383px 6.383px -3px rgba(0, 0, 0, 0.03),
+        0 20px 20px -4px rgba(0, 0, 0, 0.01);
+      overflow: hidden;
+    }
+
+    .brand {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 88px;
+      height: 36px;
+    }
+
+    .brand img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 1px 2px rgba(45, 24, 93, 0.15));
+      -webkit-filter: drop-shadow(0 1px 2px rgba(45, 24, 93, 0.15));
+    }
+
+    .divider {
+      flex: none;
+      width: 1px;
+      height: 24px;
+      margin: 0 20px;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 16px;
+      border-radius: 10px;
+      color: rgba(28, 28, 28, 0.9);
+      font-family: Inter, "Inter Placeholder", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: #1c1c1c;
+      background: rgba(224, 232, 255, 0.65);
+      outline: none;
+    }
+
+    .nav-links a.is-current {
+      background: rgba(224, 232, 255, 0.9);
+      color: #1c1c1c;
+    }
+
+    .cta {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(0, 43, 51, 0.3);
+      border-radius: 100px;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(45, 24, 93, 0.15);
+    }
+
+    .cta-inner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 16px;
+      border-radius: 100px;
+      background: linear-gradient(303deg, #b9e5ed -197%, #06b5d4 100%);
+      box-shadow:
+        0 0.707px 0.707px -0.583px rgba(16, 0, 69, 0.17),
+        0 1.807px 1.807px -1.167px rgba(16, 0, 69, 0.17),
+        0 3.622px 3.622px -1.75px rgba(16, 0, 69, 0.16),
+        0 6.866px 6.866px -2.333px rgba(16, 0, 69, 0.15),
+        0 13.647px 13.647px -2.917px rgba(16, 0, 69, 0.13),
+        0 30px 30px -3.5px rgba(16, 0, 69, 0.08),
+        inset 0 1px 2px rgb(186, 158, 255);
+      font-family: Plus Jakarta Sans, "Plus Jakarta Sans Placeholder", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    @media (max-width: 1199.98px) {
+      .nav-wrap {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 809.98px) {
+      .nav-wrap {
+        width: 95%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        border-radius: 24px;
+      }
+
+      .nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 64px;
+        padding: 0 12px 0 20px;
+      }
+
+      .brand {
+        width: 88px;
+        height: 36px;
+      }
+
+      .divider,
+      .nav-links,
+      .cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid #ebeaf6;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow:
+          0 0.796px 0.796px -1px rgba(0, 0, 0, 0.04),
+          0 2.415px 2.415px -2px rgba(0, 0, 0, 0.04),
+          0 6.383px 6.383px -3px rgba(0, 0, 0, 0.03),
+          0 20px 20px -4px rgba(0, 0, 0, 0.01);
+      }
+
+      .mobile-toggle span,
+      .mobile-toggle::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 2px;
+        border-radius: 999px;
+        background: #06b5d4;
+      }
+
+      .mobile-toggle span {
+        position: relative;
+      }
+
+      .mobile-toggle span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 16px;
+        height: 2px;
+        border-radius: 999px;
+        background: #06b5d4;
+      }
+
+      .project-name {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+        gap: 12px;
+      }
+
+      .project-title {
+        font-size: clamp(24px, 10vw, 40px);
+      }
+
+      .project-description {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .project-controls {
+        right: 20px;
+        bottom: 20px;
+        gap: 8px;
+      }
+
+      .project-control {
+        min-width: 42px;
+        height: 42px;
+        padding: 0 14px;
+      }
+
+      .project-counter {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="page-shell">
+      <div class="nav-wrap">
+        <header class="navbar" aria-label="Primary">
+          <div class="nav-top">
+            <a class="brand" href="./index.html#hero" aria-label="Emberloom home">
+              <img src="assets/images/ySi3Il6PO2H9koeGOKwN02MI4I-ffb662fa47.png" alt="Emberloom logo">
+            </a>
+            <button class="mobile-toggle" type="button" aria-label="Open menu">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <nav class="nav-links">
+            <a class="is-current" href="./projects.html">Products</a>
+            <a href="./index.html#reviews">Services</a>
+            <a href="./index.html#:lTk8chcG7">Technology</a>
+            <a href="./index.html#projects">About</a>
+            <a href="./contact.html">Contact</a>
+          </nav>
+
+          <a class="cta" href="./contact.html">
+            <span class="cta-inner">Start a Project</span>
+          </a>
+        </header>
+      </div>
+
+      <section class="project-name project-content" aria-label="Current project">
+        <p class="project-category" id="project-category">AI Application</p>
+        <h1 class="project-title" id="project-title">AI Document Assistant</h1>
+        <p class="project-description" id="project-description">Upload business documents and ask questions with source-based answers.</p>
+        <a class="project-detail" id="project-detail" href="./projects/ai-document-assistant">Detail Project</a>
+      </section>
+
+      <div class="project-controls" aria-label="Project navigation">
+        <button class="project-control" id="project-prev" type="button">Prev</button>
+        <button class="project-control" id="project-next" type="button">Next</button>
+        <div class="project-counter" id="project-counter">1</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        title: "Emberloom Website",
+        category: "Company Profile",
+        description: "Modern landing page for a digital product and IT service studio.",
+        slug: "emberloom-website"
+      },
+      {
+        title: "AI Document Assistant",
+        category: "AI Application",
+        description: "Upload business documents and ask questions with source-based answers.",
+        slug: "ai-document-assistant"
+      },
+      {
+        title: "Finance Mobile App",
+        category: "Mobile Application",
+        description: "Personal finance tracker with clean dashboard and simple analytics.",
+        slug: "finance-mobile-app"
+      },
+      {
+        title: "IoT Energy Dashboard",
+        category: "Web Dashboard",
+        description: "Real-time monitoring for energy usage, device status, and air quality.",
+        slug: "iot-energy-dashboard"
+      }
+    ];
+
+    const content = document.querySelector(".project-content");
+    const categoryEl = document.getElementById("project-category");
+    const titleEl = document.getElementById("project-title");
+    const descriptionEl = document.getElementById("project-description");
+    const detailEl = document.getElementById("project-detail");
+    const counterEl = document.getElementById("project-counter");
+    const prevButton = document.getElementById("project-prev");
+    const nextButton = document.getElementById("project-next");
+
+    let currentIndex = 1;
+    let isAnimating = false;
+
+    function renderProject(index) {
+      const project = projects[index];
+      categoryEl.textContent = project.category;
+      titleEl.textContent = project.title;
+      descriptionEl.textContent = project.description;
+      detailEl.setAttribute("href", `./projects/${project.slug}`);
+      counterEl.textContent = String(index + 1);
+    }
+
+    function changeProject(direction) {
+      if (isAnimating) {
+        return;
+      }
+
+      isAnimating = true;
+      content.classList.add("is-changing");
+
+      window.setTimeout(() => {
+        currentIndex = (currentIndex + direction + projects.length) % projects.length;
+        renderProject(currentIndex);
+        content.classList.remove("is-changing");
+
+        window.setTimeout(() => {
+          isAnimating = false;
+        }, 350);
+      }, 180);
+    }
+
+    prevButton.addEventListener("click", () => changeProject(-1));
+    nextButton.addEventListener("click", () => changeProject(1));
+
+    let wheelLock = false;
+    window.addEventListener(
+      "wheel",
+      (event) => {
+        if (wheelLock || Math.abs(event.deltaY) < 18) {
+          return;
+        }
+
+        wheelLock = true;
+        changeProject(event.deltaY > 0 ? 1 : -1);
+
+        window.setTimeout(() => {
+          wheelLock = false;
+        }, 500);
+      },
+      { passive: true }
+    );
+
+    renderProject(currentIndex);
+  </script>
+</body>
+</html>
