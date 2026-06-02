@@ -1,0 +1,494 @@
+[
+  {
+    "url": "https://framer.com/edit/init.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/init-2773a6bb3e.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/searchIndex-p1QrZNxuTQSr.json",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/data/searchIndex-p1QrZNxuTQSr.json"
+  },
+  {
+    "url": "https://framerusercontent.com/images/QcKlylrB9c5EDMQItpmmeMQc.svg",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/QcKlylrB9c5EDMQItpmmeMQc.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/U4kpH91rbQjxMrH8MwS9EW6N8.png",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/U4kpH91rbQjxMrH8MwS9EW6N8.png"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9QB_VIKg.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9QB_VIKg.woff2"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9Qh_VIKg.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9Qh_VIKg.woff2"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9Qx_VIKg.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9Qx_VIKg.woff2"
+  },
+  {
+    "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9TR_V.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_Tkn9TR_V.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/EOr0mi4hNtlgWNn9if640EZzXCo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/b6Y37FthZeALduNqHicBT6FutY.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/b6Y37FthZeALduNqHicBT6FutY.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/1K3W8DizY3v4emK8Mb08YHxTbs.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/VgYFWiwsAC5OYxAycRXXvhze58.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/GIryZETIX4IFypco5pYZONKhJIo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/GIryZETIX4IFypco5pYZONKhJIo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/vQyevYAyHtARFwPqUzQGpnDs.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/vQyevYAyHtARFwPqUzQGpnDs.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/6mJuEAguuIuMog10gGvH5d3cl8.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/DolVirEGb34pEXEp8t8FQBSK4.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/H89BbHkbHDzlxZzxi8uPzTsp90.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/ia3uin3hQWqDrVloC1zEtYHWw.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/2A4Xx7CngadFGlVV4xrO06OBHY.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/867QObYax8ANsfX4TGEVU9YiCM.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/867QObYax8ANsfX4TGEVU9YiCM.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/DOfvtmE1UplCq161m6Hj8CSQYg.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/DOfvtmE1UplCq161m6Hj8CSQYg.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/pKRFNWFoZl77qYCAIp84lN1h944.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/pKRFNWFoZl77qYCAIp84lN1h944.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/khkJkwSL66WFg8SX6Wa726c.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/khkJkwSL66WFg8SX6Wa726c.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/0E7IMbDzcGABpBwwqNEt60wU0w.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/0E7IMbDzcGABpBwwqNEt60wU0w.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/NTJ0nQgIF0gcDelS14zQ9NR9Q.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/NTJ0nQgIF0gcDelS14zQ9NR9Q.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/QrcNhgEPfRl0LS8qz5Ln8olanl8.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/QrcNhgEPfRl0LS8qz5Ln8olanl8.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/JEXmejW8mXOYMtt0hyRg811kHac.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/JEXmejW8mXOYMtt0hyRg811kHac.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/Bo5CNzBv77CafbxOtKIkpw9egw.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/Bo5CNzBv77CafbxOtKIkpw9egw.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/uy9s0iWuxiNnVt8EpTI3gzohpwo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/uy9s0iWuxiNnVt8EpTI3gzohpwo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/ePuN3mCjzajIHnyCdvKBFiZkyY0.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/ePuN3mCjzajIHnyCdvKBFiZkyY0.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/V3j1L0o5vPFKe26Sw4HcpXCfHo.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/V3j1L0o5vPFKe26Sw4HcpXCfHo.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/F3kdpd2N0cToWV5huaZjjgM.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/F3kdpd2N0cToWV5huaZjjgM.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/0iDmxkizU9goZoclqIqsV5rvETU.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/0iDmxkizU9goZoclqIqsV5rvETU.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/r0mv3NegmA0akcQsNFotG32Las.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/r0mv3NegmA0akcQsNFotG32Las.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/iwWTDc49ENF2tCHbqlNARXw6Ug.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/iwWTDc49ENF2tCHbqlNARXw6Ug.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/Ii21jnSJkulBKsHHXKlapi7fv9w.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/Ii21jnSJkulBKsHHXKlapi7fv9w.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/CDEBEFT2R7XKNGXSBBLZGMY4MMHZG75P/HEVKDGQCYDZ7Z6CDVR2ZQGBCTUD6ZARH/BKWEE3VKGTFABE37K2DTH625VUSN2N35.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/BKWEE3VKGTFABE37K2DTH625VUSN2N35.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/NID3I7RITWZSKXRCJGOCMP5NOADJK6IG/2HLHGD7OBTWCOHW64YXOE5KFXHU4KJHM/ZHME2QIRFR7UPJ47NLY27RCAFY44CKZJ.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/ZHME2QIRFR7UPJ47NLY27RCAFY44CKZJ.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/NGBUP45ES3F7RD5XGKPEDJ6QEPO4TMOK/EXDVWJ2EDDVVV65UENMX33EDDYBX6OF7/6P4FPMFQH7CCC7RZ4UU4NKSGJ2RLF7V5.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/6P4FPMFQH7CCC7RZ4UU4NKSGJ2RLF7V5.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/third-party-assets/fontshare/wf/6U2SGH566NSNERG6RGEV3DSNEK7DL2RF/JRDYRKMSAW2H35IWEQIPL67HAJQ35MG5/JNU3GNMUBPWW6V6JTED3S27XL5HN7NM5.woff2",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/fonts/JNU3GNMUBPWW6V6JTED3S27XL5HN7NM5.woff2"
+  },
+  {
+    "url": "https://framerusercontent.com/images/ySi3Il6PO2H9koeGOKwN02MI4I.png?width=376&height=406",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/ySi3Il6PO2H9koeGOKwN02MI4I-ffb662fa47.png"
+  },
+  {
+    "url": "https://framerusercontent.com/assets/V9SkoRvPZYT1Y9hArxh9cYxdQLA.mp4",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/media/V9SkoRvPZYT1Y9hArxh9cYxdQLA.mp4"
+  },
+  {
+    "url": "https://framerusercontent.com/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU.png?scale-down-to=512&width=1481&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU-9a5ea8d8ef.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU.png?scale-down-to=1024&width=1481&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU-86d4c57c37.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU.png?width=1481&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/m9tp8Ee8sMolvuvUYV4N5NNSNgU-7435450115.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/R3xExbxs40oCFu8fuXcHH8YO4Y.svg?scale-down-to=512&width=2500&height=508",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/R3xExbxs40oCFu8fuXcHH8YO4Y-5a5bb80965.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/R3xExbxs40oCFu8fuXcHH8YO4Y.svg?scale-down-to=1024&width=2500&height=508",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/R3xExbxs40oCFu8fuXcHH8YO4Y-ee66a3925f.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/R3xExbxs40oCFu8fuXcHH8YO4Y.svg?scale-down-to=2048&width=2500&height=508",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/R3xExbxs40oCFu8fuXcHH8YO4Y-a8dd52087e.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/R3xExbxs40oCFu8fuXcHH8YO4Y.svg?width=2500&height=508",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/R3xExbxs40oCFu8fuXcHH8YO4Y-354ba3171a.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/Wwnv1q0kHoCH923UivTOBKmcpFA.png?width=8451&height=2453",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/Wwnv1q0kHoCH923UivTOBKmcpFA-a6bf3384d7.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/uYGMzLdBM65WENlckaBhtDOBBI.png?width=9874&height=2589",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/uYGMzLdBM65WENlckaBhtDOBBI-b81ff9fbb0.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/969zniWd6hWV7ODlpw13nJUCvs.png?scale-down-to=512&width=2634&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/969zniWd6hWV7ODlpw13nJUCvs-1271e882bc.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/969zniWd6hWV7ODlpw13nJUCvs.png?scale-down-to=1024&width=2634&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/969zniWd6hWV7ODlpw13nJUCvs-bcace2a6a6.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/969zniWd6hWV7ODlpw13nJUCvs.png?scale-down-to=2048&width=2634&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/969zniWd6hWV7ODlpw13nJUCvs-1934d91678.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/969zniWd6hWV7ODlpw13nJUCvs.png?width=2634&height=512",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/969zniWd6hWV7ODlpw13nJUCvs-7cf352f134.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/nj4J6jsjd5DicG7zzMA3Gvj0Bg.webp?scale-down-to=512&width=617&height=400",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/nj4J6jsjd5DicG7zzMA3Gvj0Bg-d5785f85c9.webp"
+  },
+  {
+    "url": "https://framerusercontent.com/images/nj4J6jsjd5DicG7zzMA3Gvj0Bg.webp?width=617&height=400",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/nj4J6jsjd5DicG7zzMA3Gvj0Bg-6c96f5cba8.webp"
+  },
+  {
+    "url": "https://framerusercontent.com/images/8YIRoYOyh85WupfMGbs461wFC50.png?scale-down-to=512&width=1200&height=631",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/8YIRoYOyh85WupfMGbs461wFC50-51e8c273ba.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/8YIRoYOyh85WupfMGbs461wFC50.png?scale-down-to=1024&width=1200&height=631",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/8YIRoYOyh85WupfMGbs461wFC50-46bc770784.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/8YIRoYOyh85WupfMGbs461wFC50.png?width=1200&height=631",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/8YIRoYOyh85WupfMGbs461wFC50-2bba71cb4b.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/q35cI2hSMVhQPCfmfaOKlQGIg.jpg?scale-down-to=512&width=3888&height=3359",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/q35cI2hSMVhQPCfmfaOKlQGIg-50600409cd.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/q35cI2hSMVhQPCfmfaOKlQGIg.jpg?scale-down-to=1024&width=3888&height=3359",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/q35cI2hSMVhQPCfmfaOKlQGIg-d3f0b5c877.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/q35cI2hSMVhQPCfmfaOKlQGIg.jpg?scale-down-to=2048&width=3888&height=3359",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/q35cI2hSMVhQPCfmfaOKlQGIg-7b9b70e052.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/q35cI2hSMVhQPCfmfaOKlQGIg.jpg?width=3888&height=3359",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/q35cI2hSMVhQPCfmfaOKlQGIg-35912bc5f0.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/jjMbB0hkdIEw2mZhy87yGq7jjA.jpg?scale-down-to=512&width=4896&height=3264",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/jjMbB0hkdIEw2mZhy87yGq7jjA-edb591b232.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/jjMbB0hkdIEw2mZhy87yGq7jjA.jpg?scale-down-to=1024&width=4896&height=3264",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/jjMbB0hkdIEw2mZhy87yGq7jjA-f84bdd7996.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/jjMbB0hkdIEw2mZhy87yGq7jjA.jpg?scale-down-to=2048&width=4896&height=3264",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/jjMbB0hkdIEw2mZhy87yGq7jjA-4199509cea.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/jjMbB0hkdIEw2mZhy87yGq7jjA.jpg?scale-down-to=4096&width=4896&height=3264",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/jjMbB0hkdIEw2mZhy87yGq7jjA-7433e37602.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/jjMbB0hkdIEw2mZhy87yGq7jjA.jpg?width=4896&height=3264",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/jjMbB0hkdIEw2mZhy87yGq7jjA-7f2c25a8c8.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4.jpg?scale-down-to=1024&width=4000&height=6000",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4-5429c334c9.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4.jpg?scale-down-to=2048&width=4000&height=6000",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4-00e9049036.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4.jpg?scale-down-to=4096&width=4000&height=6000",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4-532a13c8d9.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4.jpg?width=4000&height=6000",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/d3Eu6UYYrfhvRt2AgGOiYzzAR4-cfe17084f3.jpg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/Wwnv1q0kHoCH923UivTOBKmcpFA.png?scale-down-to=512&width=8451&height=2453",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/Wwnv1q0kHoCH923UivTOBKmcpFA-976aa180aa.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/Wwnv1q0kHoCH923UivTOBKmcpFA.png?scale-down-to=1024&width=8451&height=2453",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/Wwnv1q0kHoCH923UivTOBKmcpFA-0a3fba961a.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/Wwnv1q0kHoCH923UivTOBKmcpFA.png?scale-down-to=2048&width=8451&height=2453",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/Wwnv1q0kHoCH923UivTOBKmcpFA-5a60eaeff2.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/Wwnv1q0kHoCH923UivTOBKmcpFA.png?scale-down-to=4096&width=8451&height=2453",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/Wwnv1q0kHoCH923UivTOBKmcpFA-a99795232e.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/uYGMzLdBM65WENlckaBhtDOBBI.png?scale-down-to=512&width=9874&height=2589",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/uYGMzLdBM65WENlckaBhtDOBBI-f4a8856a6d.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/uYGMzLdBM65WENlckaBhtDOBBI.png?scale-down-to=1024&width=9874&height=2589",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/uYGMzLdBM65WENlckaBhtDOBBI-c7ee41098e.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/uYGMzLdBM65WENlckaBhtDOBBI.png?scale-down-to=2048&width=9874&height=2589",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/uYGMzLdBM65WENlckaBhtDOBBI-65689ec970.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/uYGMzLdBM65WENlckaBhtDOBBI.png?scale-down-to=4096&width=9874&height=2589",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/uYGMzLdBM65WENlckaBhtDOBBI-a3daa64a03.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/bIlG1WkIaSFDvG1U3fgGAzua0.png?scale-down-to=512&width=2446&height=492",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/bIlG1WkIaSFDvG1U3fgGAzua0-8418b723ac.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/bIlG1WkIaSFDvG1U3fgGAzua0.png?scale-down-to=1024&width=2446&height=492",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/bIlG1WkIaSFDvG1U3fgGAzua0-d0b8411575.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/bIlG1WkIaSFDvG1U3fgGAzua0.png?scale-down-to=2048&width=2446&height=492",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/bIlG1WkIaSFDvG1U3fgGAzua0-39293965b6.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/bIlG1WkIaSFDvG1U3fgGAzua0.png?width=2446&height=492",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/bIlG1WkIaSFDvG1U3fgGAzua0-615f936727.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/aVLORwoxd1u8WsGGcRH3J9WCBZU.png?width=2455&height=406",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/aVLORwoxd1u8WsGGcRH3J9WCBZU-0dd2f24b3d.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/wGAHOWhVswEtWkOKTJN6s2CW0.svg?width=96&height=96",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/wGAHOWhVswEtWkOKTJN6s2CW0-7927fd8568.svg"
+  },
+  {
+    "url": "https://framerusercontent.com/images/aVLORwoxd1u8WsGGcRH3J9WCBZU.png?scale-down-to=512&width=2455&height=406",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/aVLORwoxd1u8WsGGcRH3J9WCBZU-fcba8e2e11.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/aVLORwoxd1u8WsGGcRH3J9WCBZU.png?scale-down-to=1024&width=2455&height=406",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/aVLORwoxd1u8WsGGcRH3J9WCBZU-93df2e6702.png"
+  },
+  {
+    "url": "https://framerusercontent.com/images/aVLORwoxd1u8WsGGcRH3J9WCBZU.png?scale-down-to=2048&width=2455&height=406",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/assets/images/aVLORwoxd1u8WsGGcRH3J9WCBZU-1ed9b7d4ad.png"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/react.bzRkuZ2e.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/react.bzRkuZ2e.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/rolldown-runtime.B3Ac26FU.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/rolldown-runtime.B3Ac26FU.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/framer.C9gJ8jaV.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/framer.C9gJ8jaV.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/motion.gfrRjc50.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/motion.gfrRjc50.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/jgBiYKUCh2u36xiBegzyOhjvRxnOiQ3-CjITXyyPr1k.Cbdm5Fjx.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/jgBiYKUCh2u36xiBegzyOhjvRxnOiQ3-CjITXyyPr1k.Cbdm5Fjx.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/shared-lib.BJYOTEJm.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/shared-lib.BJYOTEJm.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/augiA20Il.mpkX3x9g.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/augiA20Il.mpkX3x9g.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/tP1w4_GfI.D82v5qn5.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/tP1w4_GfI.D82v5qn5.mjs"
+  },
+  {
+    "url": "https://framerusercontent.com/sites/2UqaDbpBqzx8QShJ2kJqbH/script_main.BNdQDcLv.mjs",
+    "output": "/home/ad/Documents/projects/emberloom/emberloom-landeros/js/script_main.BNdQDcLv.mjs"
+  }
+]
