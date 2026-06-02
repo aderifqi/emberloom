@@ -4,186 +4,885 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Document Assistant | Emberloom</title>
-  <meta name="description" content="Dummy detail page for the AI Document Assistant project.">
+  <meta name="description" content="AI Document Assistant project detail for Emberloom.">
   <link href="../../assets/images/QcKlylrB9c5EDMQItpmmeMQc.svg" rel="icon" media="(prefers-color-scheme: light)">
   <link href="../../assets/images/QcKlylrB9c5EDMQItpmmeMQc.svg" rel="icon" media="(prefers-color-scheme: dark)">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f7f4fb;
       --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: rgba(255, 255, 255, 0.92);
-      --line: rgba(255, 255, 255, 0.72);
-      --line-soft: rgba(18, 28, 45, 0.08);
+      --shadow:
+        0 0.796px 0.796px -1px rgba(0, 0, 0, 0.04),
+        0 2.415px 2.415px -2px rgba(0, 0, 0, 0.04),
+        0 6.383px 6.383px -3px rgba(0, 0, 0, 0.03),
+        0 20px 20px -4px rgba(0, 0, 0, 0.01);
       --text: #1c1c1c;
-      --muted: rgba(28, 28, 28, 0.66);
+      --muted: rgba(28, 28, 28, 0.68);
+      --line-soft: rgba(18, 28, 45, 0.08);
       --brand: #06b5d4;
       --brand-soft: #b9e5ed;
       --accent: #ff5a36;
-      --shadow:
-        0 0.8px 0.8px -1px rgba(0, 0, 0, 0.04),
-        0 2.4px 2.4px -2px rgba(0, 0, 0, 0.04),
-        0 6.4px 6.4px -3px rgba(0, 0, 0, 0.03),
-        0 20px 20px -4px rgba(0, 0, 0, 0.01);
     }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      position: relative;
       min-height: 100vh;
-      color: var(--text);
-      font-family: Inter, "Inter Placeholder", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(6, 181, 212, 0.14), transparent 24%),
-        radial-gradient(circle at top right, rgba(255, 90, 54, 0.12), transparent 18%),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
       overflow-x: hidden;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(12, 18, 28, 0.2) 0%, rgba(12, 18, 28, 0.42) 100%),
+        url("../../assets/media/dashboard-lynq.jpg") center center / cover no-repeat fixed;
+      font-family: Inter, "Inter Placeholder", sans-serif;
     }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .page { width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 80px; }
-    .nav-wrap { position: sticky; top: 24px; z-index: 20; margin-bottom: 28px; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(6, 181, 212, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(255, 90, 54, 0.08), transparent 18%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    #app {
+      position: relative;
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      padding: 24px 20px;
+    }
+
+    .nav-wrap {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      z-index: 10;
+      width: min(60%, 720px);
+      transform: translateX(-50%);
+    }
+
     .navbar {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      width: min(100%, 720px); margin: 0 auto; padding: 10px 25px; border: 1px solid var(--line);
-      border-radius: 100px; background: linear-gradient(180deg, rgba(246, 241, 252, 0.76) 0%, rgba(255, 255, 255, 0.78) 100%);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      width: 100%;
+      padding: 10px 25px;
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 100px;
+      background: linear-gradient(180deg, rgba(246, 241, 252, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    .brand { display: inline-flex; align-items: center; width: 88px; height: 36px; flex: none; }
-    .brand img { width: 100%; height: 100%; object-fit: contain; object-position: left center; filter: drop-shadow(0 1px 2px rgba(45, 24, 93, 0.15)); }
-    .divider { width: 1px; height: 24px; margin: 0 20px; border-radius: 7px; background: #fff; flex: none; }
-    .nav-links { display: flex; align-items: center; justify-content: center; gap: 0; flex: 1 1 auto; min-width: 0; }
-    .nav-links a, .cta-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px; border-radius: 10px; font-size: 14px; font-weight: 500; letter-spacing: -0.03em; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a:focus-visible, .nav-links a.is-current { background: rgba(224, 232, 255, 0.9); outline: none; }
-    .cta-link {
-      min-height: 46px; padding: 0 18px; border: 1px solid rgba(0, 43, 51, 0.3); border-radius: 999px; color: #fff;
+
+    .nav-top {
+      display: contents;
+    }
+
+    .brand {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 88px;
+      height: 36px;
+    }
+
+    .brand img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 1px 2px rgba(45, 24, 93, 0.15));
+      -webkit-filter: drop-shadow(0 1px 2px rgba(45, 24, 93, 0.15));
+    }
+
+    .divider {
+      flex: none;
+      width: 1px;
+      height: 24px;
+      margin: 0 20px;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 16px;
+      border-radius: 10px;
+      color: rgba(28, 28, 28, 0.9);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: #1c1c1c;
+      background: rgba(224, 232, 255, 0.65);
+      outline: none;
+    }
+
+    .nav-links a.is-current {
+      background: rgba(224, 232, 255, 0.9);
+      color: #1c1c1c;
+    }
+
+    .cta {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(0, 43, 51, 0.3);
+      border-radius: 100px;
+      color: #fff;
+      box-shadow: 0 1px 4px rgba(45, 24, 93, 0.15);
+    }
+
+    .cta-inner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 16px;
+      border-radius: 100px;
+      background: linear-gradient(303deg, #b9e5ed -197%, #06b5d4 100%);
+      box-shadow:
+        0 0.707px 0.707px -0.583px rgba(16, 0, 69, 0.17),
+        0 1.807px 1.807px -1.167px rgba(16, 0, 69, 0.17),
+        0 3.622px 3.622px -1.75px rgba(16, 0, 69, 0.16),
+        0 6.866px 6.866px -2.333px rgba(16, 0, 69, 0.15),
+        0 13.647px 13.647px -2.917px rgba(16, 0, 69, 0.13),
+        0 30px 30px -3.5px rgba(16, 0, 69, 0.08),
+        inset 0 1px 2px rgb(186, 158, 255);
+      font-family: Plus Jakarta Sans, "Plus Jakarta Sans Placeholder", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    .project-name {
+      position: fixed;
+      left: 32px;
+      bottom: 36px;
+      z-index: 3;
+      margin: 0;
+      max-width: min(560px, calc(100vw - 180px));
+      display: grid;
+      gap: 14px;
+      color: #fff;
+    }
+
+    .project-category {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0;
+      font-family: Inter Display, "Inter Display Placeholder", Inter, "Inter Placeholder", sans-serif;
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .project-description {
+      margin: 0;
+      max-width: 36rem;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .project-detail {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-detail:hover,
+    .project-detail:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.46);
+      outline: none;
+    }
+
+    .project-controls {
+      position: fixed;
+      right: 32px;
+      bottom: 36px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .project-control,
+    .project-counter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 46px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .project-control {
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-control:hover,
+    .project-control:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.46);
+      outline: none;
+    }
+
+    .project-control:active {
+      transform: scale(0.98);
+    }
+
+    .project-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .project-content.is-dimmed,
+    .project-controls.is-dimmed {
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+    }
+
+    .stage-spacer {
+      height: 100vh;
+    }
+
+    .detail-surface {
+      position: relative;
+      z-index: 2;
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 40px 0 96px;
+      border-radius: 40px 40px 0 0;
+      background:
+        radial-gradient(circle at top left, rgba(6, 181, 212, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 90, 54, 0.1), transparent 20%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, #f4f4fa 100%);
+      box-shadow:
+        0 -20px 40px rgba(16, 0, 69, 0.08),
+        0 40px 80px rgba(16, 0, 69, 0.06);
+    }
+
+    .detail-wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .detail-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 24px;
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      border-radius: 32px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .intro-copy,
+    .section-card,
+    .wide-card,
+    .cta-card {
+      padding: 32px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(28, 28, 28, 0.06);
+      color: #0b6d85;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .intro-copy h2 {
+      margin-top: 18px;
+      font-family: Inter Display, "Inter Display Placeholder", Inter, sans-serif;
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 12ch;
+    }
+
+    .intro-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: -0.02em;
+    }
+
+    .meta-grid,
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .meta-card,
+    .stack-item,
+    .bullet {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line-soft);
+    }
+
+    .meta-card strong,
+    .bullet strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .meta-card span,
+    .bullet span,
+    .stack-item span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .intro-visual {
+      min-height: 100%;
+      padding: 24px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(8, 14, 28, 0.08), rgba(8, 14, 28, 0.46)),
+        url("../../assets/media/dashboard-lynq.jpg") center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .visual-card {
+      width: 100%;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .visual-card p + p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-card h2,
+    .wide-card h2,
+    .cta-card h2 {
+      font-family: Inter Display, "Inter Display Placeholder", Inter, sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-card p,
+    .wide-card p,
+    .cta-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .wide-card {
+      margin-bottom: 24px;
+    }
+
+    .stack-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .stack-item {
+      text-align: center;
+    }
+
+    .stack-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-card {
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(6, 181, 212, 0.22), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(240, 247, 249, 0.94));
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      border: 1px solid transparent;
+    }
+
+    .button-primary {
+      color: #fff;
       background: linear-gradient(303deg, var(--brand-soft) -197%, var(--brand) 100%);
-      box-shadow: 0 0.7px 0.7px -0.58px rgba(16, 0, 69, 0.17), 0 1.8px 1.8px -1.16px rgba(16, 0, 69, 0.17), 0 3.6px 3.6px -1.75px rgba(16, 0, 69, 0.16), 0 6.8px 6.8px -2.33px rgba(16, 0, 69, 0.15), 0 13.6px 13.6px -2.9px rgba(16, 0, 69, 0.13), 0 30px 30px -3.5px rgba(16, 0, 69, 0.08), inset 0 1px 2px rgb(186, 158, 255);
+      box-shadow: 0 18px 36px rgba(6, 181, 212, 0.2);
     }
-    .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: stretch; margin-bottom: 24px; }
-    .panel { border: 1px solid rgba(255, 255, 255, 0.72); border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); overflow: hidden; }
-    .hero-copy { padding: 44px; }
-    .eyebrow { display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border-radius: 999px; background: rgba(28, 28, 28, 0.06); color: #0b6d85; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-    h1, h2, h3, p { margin: 0; }
-    h1 { margin-top: 18px; font-family: "Inter Display", "Inter Display Placeholder", Inter, sans-serif; font-size: clamp(42px, 7vw, 76px); font-weight: 500; line-height: 0.96; letter-spacing: -0.06em; max-width: 10ch; }
-    .lead { margin-top: 20px; max-width: 52ch; color: var(--muted); font-size: 17px; line-height: 1.6; letter-spacing: -0.02em; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: -0.03em; border: 1px solid transparent; }
-    .button-primary { color: #fff; background: linear-gradient(303deg, var(--brand-soft) -197%, var(--brand) 100%); box-shadow: 0 18px 36px rgba(6, 181, 212, 0.2); }
-    .button-secondary { color: var(--text); border-color: var(--line-soft); background: rgba(255, 255, 255, 0.76); }
-    .stat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
-    .stat { padding: 18px; border-radius: 22px; background: rgba(255, 255, 255, 0.72); border: 1px solid var(--line-soft); }
-    .stat strong { display: block; font-size: 28px; font-weight: 600; letter-spacing: -0.05em; }
-    .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-    .hero-visual { min-height: 100%; background: linear-gradient(180deg, rgba(9, 15, 29, 0.16), rgba(9, 15, 29, 0.44)), url("../../assets/media/dashboard-lynq.jpg") center center / cover no-repeat; display: flex; align-items: flex-end; padding: 24px; }
-    .visual-card { width: 100%; padding: 22px; border-radius: 24px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-    .visual-card p + p { margin-top: 10px; color: rgba(255, 255, 255, 0.78); line-height: 1.6; }
-    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .section-card { padding: 30px; }
-    .section-card h2 { font-family: "Inter Display", "Inter Display Placeholder", Inter, sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 500; line-height: 1; letter-spacing: -0.05em; margin-bottom: 18px; }
-    .section-card p { color: var(--muted); line-height: 1.7; }
-    .bullet-list { display: grid; gap: 14px; margin-top: 18px; }
-    .bullet { padding: 18px 20px; border-radius: 22px; background: rgba(255, 255, 255, 0.72); border: 1px solid var(--line-soft); }
-    .bullet strong { display: block; margin-bottom: 8px; font-size: 16px; font-weight: 600; letter-spacing: -0.03em; }
-    .bullet span { color: var(--muted); line-height: 1.6; font-size: 14px; }
-    .full-card { margin-top: 24px; padding: 30px; }
-    .stack-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
-    .stack-item { padding: 18px; border-radius: 22px; background: rgba(255, 255, 255, 0.72); border: 1px solid var(--line-soft); text-align: center; font-size: 14px; font-weight: 600; letter-spacing: -0.02em; }
-    .cta-card { margin-top: 24px; padding: 34px; text-align: center; background: radial-gradient(circle at top left, rgba(6, 181, 212, 0.2), transparent 30%), linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(240, 247, 249, 0.94)); }
-    .cta-card p { max-width: 52ch; margin: 14px auto 0; color: var(--muted); }
-    .cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+
+    .button-secondary {
+      color: var(--text);
+      border-color: var(--line-soft);
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    @media (max-width: 1199.98px) {
+      .nav-wrap {
+        width: 90%;
+      }
+
+      .detail-surface {
+        width: calc(100% - 24px);
+      }
+    }
+
     @media (max-width: 980px) {
-      .hero, .content-grid { grid-template-columns: 1fr; }
-      .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .navbar { width: 100%; }
+      .detail-intro,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
+
     @media (max-width: 809.98px) {
-      .page { width: min(100%, calc(100% - 24px)); padding-top: 16px; }
-      .nav-wrap { top: 16px; }
-      .navbar { width: 100%; border-radius: 24px; padding: 14px 18px; flex-wrap: wrap; justify-content: center; }
-      .divider { display: none; }
-      .brand, .nav-links, .cta-link { width: 100%; justify-content: center; }
-      .nav-links { flex-wrap: wrap; }
-      .hero-copy, .section-card, .full-card, .cta-card { padding: 22px; }
-      .stat-grid, .stack-grid { grid-template-columns: 1fr; }
+      .nav-wrap {
+        width: 95%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        border-radius: 24px;
+      }
+
+      .nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 64px;
+        padding: 0 12px 0 20px;
+      }
+
+      .divider,
+      .nav-links,
+      .cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid #ebeaf6;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .mobile-toggle span,
+      .mobile-toggle::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 2px;
+        border-radius: 999px;
+        background: #06b5d4;
+      }
+
+      .mobile-toggle span {
+        position: relative;
+      }
+
+      .mobile-toggle span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 16px;
+        height: 2px;
+        border-radius: 999px;
+        background: #06b5d4;
+      }
+
+      .project-name {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+        gap: 12px;
+      }
+
+      .project-title {
+        font-size: clamp(24px, 10vw, 40px);
+      }
+
+      .project-description {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .project-controls {
+        right: 20px;
+        bottom: 20px;
+        gap: 8px;
+      }
+
+      .project-control,
+      .project-counter {
+        min-width: 42px;
+        height: 42px;
+        padding: 0 14px;
+      }
+
+      .detail-surface {
+        width: calc(100% - 16px);
+        padding: 24px 0 72px;
+        border-radius: 28px 28px 0 0;
+      }
+
+      .detail-wrap {
+        width: calc(100% - 24px);
+      }
+
+      .intro-copy,
+      .section-card,
+      .wide-card,
+      .cta-card {
+        padding: 22px;
+      }
+
+      .meta-grid,
+      .stack-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="nav-wrap">
-      <header class="navbar" aria-label="Primary">
-        <a class="brand" href="../../index.html#hero" aria-label="Emberloom home">
-          <img src="../../assets/images/ySi3Il6PO2H9koeGOKwN02MI4I-ffb662fa47.png" alt="Emberloom logo">
-        </a>
-        <div class="divider" aria-hidden="true"></div>
-        <nav class="nav-links">
-          <a class="is-current" href="../../projects.html">Products</a>
-          <a href="../../index.html#reviews">Services</a>
-          <a href="../../index.html#:lTk8chcG7">Technology</a>
-          <a href="../../index.html#projects">About</a>
-          <a href="../../contact.html">Contact</a>
-        </nav>
-        <a class="cta-link" href="../../contact.html">Start a Project</a>
-      </header>
+  <div id="app">
+    <div class="page-shell">
+      <div class="nav-wrap">
+        <header class="navbar" aria-label="Primary">
+          <div class="nav-top">
+            <a class="brand" href="../../index.html#hero" aria-label="Emberloom home">
+              <img src="../../assets/images/ySi3Il6PO2H9koeGOKwN02MI4I-ffb662fa47.png" alt="Emberloom logo">
+            </a>
+            <button class="mobile-toggle" type="button" aria-label="Open menu">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <nav class="nav-links">
+            <a class="is-current" href="../../projects.html">Products</a>
+            <a href="../../index.html#reviews">Services</a>
+            <a href="../../index.html#:lTk8chcG7">Technology</a>
+            <a href="../../index.html#projects">About</a>
+            <a href="../../contact.html">Contact</a>
+          </nav>
+
+          <a class="cta" href="../../contact.html">
+            <span class="cta-inner">Start a Project</span>
+          </a>
+        </header>
+      </div>
+
+      <section class="project-name project-content" aria-label="Current project">
+        <p class="project-category">AI Application</p>
+        <h1 class="project-title">AI Document Assistant</h1>
+        <p class="project-description">Upload business documents and ask questions with source-based answers.</p>
+        <a class="project-detail" href="#project-detail-content">Detail Project</a>
+      </section>
+
+      <div class="project-controls" aria-label="Project navigation">
+        <a class="project-control" href="../emberloom-website/">Prev</a>
+        <a class="project-control" href="../finance-mobile-app/">Next</a>
+        <div class="project-counter" aria-label="Current project position">2</div>
+      </div>
     </div>
-    <section class="hero">
-      <article class="panel hero-copy">
-        <div class="eyebrow">AI Application</div>
-        <h1>AI Document Assistant</h1>
-        <p class="lead">Upload business documents and ask questions with source-based answers. This placeholder detail page is built to show how Emberloom could present AI work in a clearer, more premium portfolio format.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="../../contact.html">Build Similar Product</a>
-          <a class="button button-secondary" href="../../projects.html">Back to Projects</a>
-        </div>
-        <div class="stat-grid">
-          <div class="stat"><strong>4 types</strong><span>Dummy support for contracts, SOPs, reports, and policy documents.</span></div>
-          <div class="stat"><strong>24/7</strong><span>Always-available question flow for internal teams and client ops.</span></div>
-          <div class="stat"><strong>92%</strong><span>Placeholder confidence target for answer quality with cited context.</span></div>
-        </div>
-      </article>
-      <aside class="panel hero-visual">
-        <div class="visual-card">
-          <p><strong>Project Snapshot</strong></p>
-          <p>Search, retrieval, and answer composition wrapped in a simple product flow designed for business users, not technical operators.</p>
-        </div>
-      </aside>
-    </section>
-    <section class="content-grid">
-      <article class="panel section-card">
-        <h2>Problem Fit</h2>
-        <p>Teams often store knowledge across scattered PDFs, documents, and internal references. The product concept reduces the time spent opening files one by one, while keeping answers tied to the original source context.</p>
-        <div class="bullet-list">
-          <div class="bullet"><strong>User Need</strong><span>Find reliable answers from internal documentation without manual reading across multiple files.</span></div>
-          <div class="bullet"><strong>Design Goal</strong><span>Keep the experience simple enough for operations, finance, and support teams to use daily.</span></div>
-        </div>
-      </article>
-      <article class="panel section-card">
-        <h2>What’s Included</h2>
-        <div class="bullet-list">
-          <div class="bullet"><strong>Upload Flow</strong><span>Dummy upload area for bringing in business documents and processing them into a searchable workspace.</span></div>
-          <div class="bullet"><strong>Answer UI</strong><span>Conversation layout with source-linked responses and visible traceability.</span></div>
-          <div class="bullet"><strong>Admin Layer</strong><span>Basic management concept for document collections, roles, and content freshness.</span></div>
-        </div>
-      </article>
-    </section>
-    <section class="panel full-card">
-      <h2>Tools & Stack</h2>
-      <p>This dummy case assumes a modern web stack with document parsing, retrieval, and a response layer presented inside a guided dashboard interface. The page itself mirrors Emberloom’s existing glassy, gradient-led brand direction.</p>
-      <div class="stack-grid">
-        <div class="stack-item">Product UI</div>
-        <div class="stack-item">AI Retrieval</div>
-        <div class="stack-item">Source Citations</div>
-        <div class="stack-item">Admin Dashboard</div>
+
+    <div class="stage-spacer" aria-hidden="true"></div>
+
+    <main class="detail-surface" id="project-detail-content">
+      <div class="detail-wrap">
+        <section class="detail-intro">
+          <article class="panel intro-copy">
+            <div class="eyebrow">Project Overview</div>
+            <h2>Document Q&amp;A built for teams that need traceable answers.</h2>
+            <p>This concept positions AI as a calm business tool, not a technical demo. The product flow is centered on document ingestion, retrieval with visible sources, and a response experience that makes it easy for operations, compliance, and support teams to trust what they see.</p>
+            <div class="meta-grid">
+              <div class="meta-card">
+                <strong>Primary Users</strong>
+                <span>Operations, legal, finance, and internal support teams working from large document sets.</span>
+              </div>
+              <div class="meta-card">
+                <strong>Core Promise</strong>
+                <span>Shorten time-to-answer while keeping every response tied back to the original source file.</span>
+              </div>
+              <div class="meta-card">
+                <strong>Experience Goal</strong>
+                <span>Make retrieval feel simple and dependable enough to use in everyday internal workflows.</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="panel intro-visual">
+            <div class="visual-card">
+              <p><strong>Project Snapshot</strong></p>
+              <p>Upload, index, search, and answer composition are packaged into one guided interface with clear evidence trails and lightweight admin controls.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel section-card">
+            <h2>Problem Fit</h2>
+            <p>Business knowledge often lives in contracts, SOPs, reports, and policy documents that are hard to search consistently. The product direction reduces manual file-hunting by giving teams one place to ask questions and inspect the supporting source text immediately.</p>
+            <div class="bullet-list">
+              <div class="bullet">
+                <strong>User Need</strong>
+                <span>Reliable answers from internal documents without opening dozens of files one by one.</span>
+              </div>
+              <div class="bullet">
+                <strong>Trust Layer</strong>
+                <span>Every answer should expose citations, source excerpts, and enough context to verify the response quickly.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel section-card">
+            <h2>Scope Direction</h2>
+            <div class="bullet-list">
+              <div class="bullet">
+                <strong>Document Intake</strong>
+                <span>Structured upload flow for business files with collection-level organization and processing status.</span>
+              </div>
+              <div class="bullet">
+                <strong>Answer Workspace</strong>
+                <span>Conversation UI that keeps answers concise while exposing the most relevant source passages nearby.</span>
+              </div>
+              <div class="bullet">
+                <strong>Admin Controls</strong>
+                <span>Collection management, content freshness, and lightweight permissions for internal teams.</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel wide-card">
+          <h2>Tools &amp; Stack</h2>
+          <p>The implementation direction assumes a modern web application with document parsing, retrieval infrastructure, answer generation, and an admin layer for maintaining content quality. The visual system stays aligned with Emberloom’s glass-led presentation, but the interaction model is tuned for clarity and evidence over spectacle.</p>
+          <div class="stack-grid">
+            <div class="stack-item">
+              <strong>Product UI</strong>
+              <span>Dashboard-like workspace with guided actions and low-friction navigation.</span>
+            </div>
+            <div class="stack-item">
+              <strong>Retrieval Layer</strong>
+              <span>Chunking, search, and ranking designed around source relevance.</span>
+            </div>
+            <div class="stack-item">
+              <strong>Citation Model</strong>
+              <span>Answer output paired with linked evidence and reference excerpts.</span>
+            </div>
+            <div class="stack-item">
+              <strong>Admin Surface</strong>
+              <span>Collections, roles, freshness checks, and content operations in one place.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel cta-card">
+          <h2>Need this as a real case study?</h2>
+          <p>This structure is ready to hold final screenshots, user flows, architecture decisions, and actual product metrics once the portfolio content is finalized.</p>
+          <div class="cta-actions">
+            <a class="button button-primary" href="../../contact.html">Discuss AI Product</a>
+            <a class="button button-secondary" href="../../projects.html">Back to Projects</a>
+          </div>
+        </section>
       </div>
-    </section>
-    <section class="panel cta-card">
-      <h2>Want a Real Case Study Here?</h2>
-      <p>This placeholder can be expanded with architecture diagrams, screenshots, prompt flow decisions, and role-based UX once the final project portfolio content is ready.</p>
-      <div class="cta-actions">
-        <a class="button button-primary" href="../../contact.html">Discuss AI Product</a>
-        <a class="button button-secondary" href="../../projects.html">See Other Projects</a>
-      </div>
-    </section>
+    </main>
   </div>
+
+  <script>
+    const heroContent = document.querySelector(".project-content");
+    const heroControls = document.querySelector(".project-controls");
+
+    function syncHeroState() {
+      const hideOffset = window.innerHeight * 0.35;
+      const shouldHide = window.scrollY > hideOffset;
+      heroContent.classList.toggle("is-dimmed", shouldHide);
+      heroControls.classList.toggle("is-dimmed", shouldHide);
+    }
+
+    window.addEventListener("scroll", syncHeroState, { passive: true });
+    window.addEventListener("resize", syncHeroState);
+    syncHeroState();
+  </script>
 </body>
 </html>

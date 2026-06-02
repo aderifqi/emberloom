@@ -135,10 +135,9 @@
 <body>
 	<script async src="https://events.framer.com/script?v=2" data-fid="5cc03d6ea035ef7e3ad51ef6e3b4e4c57b26f55928d90a9e1b5471fe0d1da382" data-no-nt></script>
 	<!-- Start of bodyStart -->
-    <a href="./projects.html" style="position:fixed;top:18px;right:18px;z-index:2147483646;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,#06b5d4 0%,#0b6d85 100%);color:#fff;font:700 14px/1 Inter,Arial,sans-serif;text-decoration:none;box-shadow:0 12px 28px rgba(11,109,133,.28)">Projects</a>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
-        const links = Array.from(document.querySelectorAll('a[href="./#services"], a[href="./product.html"]'));
+        const links = Array.from(document.querySelectorAll('a[href]'));
         links.forEach((link) => {
           const label = (link.textContent || "").trim().toLowerCase();
           if (label === "products" || label === "product" || link.getAttribute("href") === "./product.html") {
