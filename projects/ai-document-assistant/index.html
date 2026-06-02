@@ -353,6 +353,7 @@
       width: 100%;
       margin: 0;
       padding: 40px 0 96px;
+      scroll-margin-top: 110px;
       border-radius: 40px 40px 0 0;
       background:
         radial-gradient(circle at top left, rgba(6, 181, 212, 0.12), transparent 30%),
@@ -364,16 +365,8 @@
     }
 
     .detail-wrap {
-      width: calc(100% - 48px);
+      width: min(1200px, calc(100% - 48px));
       margin: 0 auto;
-    }
-
-    .detail-intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      gap: 24px;
-      align-items: stretch;
-      margin-bottom: 24px;
     }
 
     .panel {
@@ -391,6 +384,124 @@
     .wide-card,
     .cta-card {
       padding: 32px;
+    }
+
+    .about-shell {
+      display: grid;
+      gap: 40px;
+    }
+
+    .about-header {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.28fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-title {
+      margin: 0;
+      font-family: Inter Display, "Inter Display Placeholder", Inter, sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .about-text {
+      max-width: 74ch;
+      color: #4f5b66;
+      font-size: 16px;
+      line-height: 1.72;
+      letter-spacing: -0.02em;
+    }
+
+    .detail-rows {
+      display: grid;
+      border-top: 1px solid rgba(18, 28, 45, 0.12);
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      min-height: 68px;
+      padding: 0 0 0 0;
+      border-bottom: 1px solid rgba(18, 28, 45, 0.12);
+    }
+
+    .detail-label {
+      color: rgba(28, 28, 28, 0.56);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .detail-value {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #1c1c1c;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .detail-value span:last-child {
+      color: rgba(28, 28, 28, 0.72);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .showcase-image,
+    .story-image {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 18px 48px rgba(16, 0, 69, 0.08);
+    }
+
+    .showcase-image img,
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-image {
+      aspect-ratio: 16 / 9;
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 34px;
+    }
+
+    .story-block h3 {
+      margin: 0 0 14px;
+      font-family: Inter Display, "Inter Display Placeholder", Inter, sans-serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .story-block p {
+      max-width: 78ch;
+      color: #5b6570;
+      font-size: 16px;
+      line-height: 1.74;
+      letter-spacing: -0.02em;
+    }
+
+    .story-image {
+      aspect-ratio: 16 / 10;
+    }
+
+    .story-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
     }
 
     .eyebrow {
@@ -590,9 +701,16 @@
     }
 
     @media (max-width: 980px) {
-      .detail-intro,
-      .content-grid {
+      .about-header,
+      .detail-row {
         grid-template-columns: 1fr;
+      }
+
+      .detail-value {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding-bottom: 18px;
       }
 
       .stack-grid {
@@ -704,6 +822,20 @@
         width: calc(100% - 24px);
       }
 
+      .about-shell {
+        gap: 28px;
+      }
+
+      .about-header {
+        gap: 12px;
+      }
+
+      .detail-row {
+        gap: 8px;
+        min-height: auto;
+        padding: 14px 0 0;
+      }
+
       .intro-copy,
       .section-card,
       .wide-card,
@@ -714,6 +846,11 @@
       .meta-grid,
       .stack-grid {
         grid-template-columns: 1fr;
+      }
+
+      .showcase-image,
+      .story-image {
+        border-radius: 16px;
       }
     }
   </style>
@@ -766,99 +903,71 @@
 
     <main class="detail-surface" id="project-detail-content">
       <div class="detail-wrap">
-        <section class="detail-intro">
-          <article class="panel intro-copy">
-            <div class="eyebrow">Project Overview</div>
-            <h2>Document Q&amp;A built for teams that need traceable answers.</h2>
-            <p>This concept positions AI as a calm business tool, not a technical demo. The product flow is centered on document ingestion, retrieval with visible sources, and a response experience that makes it easy for operations, compliance, and support teams to trust what they see.</p>
-            <div class="meta-grid">
-              <div class="meta-card">
-                <strong>Primary Users</strong>
-                <span>Operations, legal, finance, and internal support teams working from large document sets.</span>
-              </div>
-              <div class="meta-card">
-                <strong>Core Promise</strong>
-                <span>Shorten time-to-answer while keeping every response tied back to the original source file.</span>
-              </div>
-              <div class="meta-card">
-                <strong>Experience Goal</strong>
-                <span>Make retrieval feel simple and dependable enough to use in everyday internal workflows.</span>
-              </div>
-            </div>
-          </article>
+        <section class="about-shell" aria-label="About project">
+          <div class="about-header">
+            <h2 class="about-title">About</h2>
+            <p class="about-text">AI Document Assistant is positioned as a dependable workspace for teams that need fast answers from internal files without losing the audit trail. The product concept focuses on document ingestion, retrieval with visible evidence, and a response experience that helps operations, legal, finance, and support teams verify every answer in context.</p>
+          </div>
 
-          <aside class="panel intro-visual">
-            <div class="visual-card">
-              <p><strong>Project Snapshot</strong></p>
-              <p>Upload, index, search, and answer composition are packaged into one guided interface with clear evidence trails and lightweight admin controls.</p>
-            </div>
-          </aside>
-        </section>
-
-        <section class="content-grid">
-          <article class="panel section-card">
-            <h2>Problem Fit</h2>
-            <p>Business knowledge often lives in contracts, SOPs, reports, and policy documents that are hard to search consistently. The product direction reduces manual file-hunting by giving teams one place to ask questions and inspect the supporting source text immediately.</p>
-            <div class="bullet-list">
-              <div class="bullet">
-                <strong>User Need</strong>
-                <span>Reliable answers from internal documents without opening dozens of files one by one.</span>
-              </div>
-              <div class="bullet">
-                <strong>Trust Layer</strong>
-                <span>Every answer should expose citations, source excerpts, and enough context to verify the response quickly.</span>
+          <div class="detail-rows" aria-label="Project details">
+            <div class="detail-row">
+              <div class="detail-label">Project type</div>
+              <div class="detail-value">
+                <span>AI knowledge workspace</span>
+                <span>Document Q&amp;A with source-grounded responses</span>
               </div>
             </div>
-          </article>
-
-          <article class="panel section-card">
-            <h2>Scope Direction</h2>
-            <div class="bullet-list">
-              <div class="bullet">
-                <strong>Document Intake</strong>
-                <span>Structured upload flow for business files with collection-level organization and processing status.</span>
-              </div>
-              <div class="bullet">
-                <strong>Answer Workspace</strong>
-                <span>Conversation UI that keeps answers concise while exposing the most relevant source passages nearby.</span>
-              </div>
-              <div class="bullet">
-                <strong>Admin Controls</strong>
-                <span>Collection management, content freshness, and lightweight permissions for internal teams.</span>
+            <div class="detail-row">
+              <div class="detail-label">Primary users</div>
+              <div class="detail-value">
+                <span>Operations, legal, finance, support</span>
+                <span>Teams working from large internal document collections</span>
               </div>
             </div>
-          </article>
-        </section>
-
-        <section class="panel wide-card">
-          <h2>Tools &amp; Stack</h2>
-          <p>The implementation direction assumes a modern web application with document parsing, retrieval infrastructure, answer generation, and an admin layer for maintaining content quality. The visual system stays aligned with Emberloom’s glass-led presentation, but the interaction model is tuned for clarity and evidence over spectacle.</p>
-          <div class="stack-grid">
-            <div class="stack-item">
-              <strong>Product UI</strong>
-              <span>Dashboard-like workspace with guided actions and low-friction navigation.</span>
+            <div class="detail-row">
+              <div class="detail-label">Core capabilities</div>
+              <div class="detail-value">
+                <span>Upload, index, retrieve, answer</span>
+                <span>Citations, excerpts, and collection-level organization</span>
+              </div>
             </div>
-            <div class="stack-item">
-              <strong>Retrieval Layer</strong>
-              <span>Chunking, search, and ranking designed around source relevance.</span>
-            </div>
-            <div class="stack-item">
-              <strong>Citation Model</strong>
-              <span>Answer output paired with linked evidence and reference excerpts.</span>
-            </div>
-            <div class="stack-item">
-              <strong>Admin Surface</strong>
-              <span>Collections, roles, freshness checks, and content operations in one place.</span>
+            <div class="detail-row">
+              <div class="detail-label">Delivery direction</div>
+              <div class="detail-value">
+                <span>Web application</span>
+                <span>Admin controls, freshness checks, and lightweight permissions</span>
+              </div>
             </div>
           </div>
-        </section>
 
-        <section class="panel cta-card">
-          <h2>Need this as a real case study?</h2>
-          <p>This structure is ready to hold final screenshots, user flows, architecture decisions, and actual product metrics once the portfolio content is finalized.</p>
-          <div class="cta-actions">
-            <a class="button button-primary" href="../../contact.html">Discuss AI Product</a>
-            <a class="button button-secondary" href="../../projects.html">Back to Projects</a>
+          <figure class="showcase-image">
+            <img src="../../assets/media/dashboard-lynq.jpg" alt="Dashboard-style interface visual representing analytics and document intelligence">
+          </figure>
+
+          <div class="story-grid">
+            <section class="story-block">
+              <h3>Challenges</h3>
+              <p>Business knowledge is often buried inside contracts, SOPs, policies, and reports that are slow to search manually. The challenge is not only retrieving relevant passages, but presenting them in a way that feels trustworthy enough for daily internal use. This direction emphasizes fast retrieval, clear provenance, and a UI that reduces hesitation when users need to validate what the system is saying.</p>
+            </section>
+
+            <section class="story-block">
+              <h3>The process</h3>
+              <p>The product flow is designed around a simple sequence: bring documents in, organize them into usable collections, ask questions naturally, then inspect the evidence without leaving the answer workspace. On the system side, that means a parsing layer for uploaded files, retrieval tuned around source relevance, and an answer composition layer that keeps citations visible rather than hidden behind extra clicks.</p>
+            </section>
+
+            <figure class="story-image">
+              <img src="../../assets/images/QGUnUdBrjJ7dPQtbr7XqO3p0KRE-a1affda08f.png" alt="Futuristic AI visual used as supporting imagery for the project story">
+            </figure>
+
+            <section class="story-block">
+              <h3>The outcome</h3>
+              <p>The resulting presentation feels closer to a practical internal tool than a generic AI demo. It creates a clear narrative around trust, traceability, and operational speed, which makes the concept stronger as a product case study. The page is now structured to accommodate final UI shots, architecture decisions, measurable usage outcomes, and the reasoning behind product choices once the portfolio material is finalized.</p>
+            </section>
+
+            <div class="story-cta">
+              <a class="button button-primary" href="../../contact.html">Discuss AI Product</a>
+              <a class="button button-secondary" href="../../projects.html">Back to Projects</a>
+            </div>
           </div>
         </section>
       </div>
