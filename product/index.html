@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products | Emberloom</title>
+  <meta name="description" content="Explore Emberloom products for AI automation, workflow operations, customer support, and reporting.">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../assets/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-icon.png">
+  <link rel="manifest" href="../assets/icons/manifest.json">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #ffffff;
+      --text: #162033;
+      --muted: #5f6b85;
+      --line: rgba(22, 32, 51, 0.12);
+      --brand: #06b5d4;
+      --brand-dark: #0b6d85;
+      --accent: #ff5a36;
+      --shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(6, 181, 212, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 90, 54, 0.14), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 0;
+      backdrop-filter: blur(18px);
+      background: rgba(245, 247, 251, 0.72);
+      border-bottom: 1px solid rgba(22, 32, 51, 0.06);
+    }
+
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand__mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .site-nav a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .site-nav a[aria-current="page"],
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      background: rgba(6, 181, 212, 0.12);
+      color: var(--brand-dark);
+      outline: none;
+    }
+
+    main {
+      padding: 44px 0 88px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 52px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(6, 181, 212, 0.12);
+      filter: blur(10px);
+      z-index: -1;
+      transform: translate(-20%, 20%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(22, 32, 51, 0.06);
+      color: var(--brand-dark);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2.8rem, 7vw, 5.3rem);
+      max-width: 10ch;
+    }
+
+    .lead {
+      margin-top: 20px;
+      max-width: 58ch;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+    }
+
+    .button--primary {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(11, 109, 133, 0.22);
+    }
+
+    .button--secondary {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(22, 32, 51, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-visual {
+      display: grid;
+      gap: 16px;
+      padding: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(232, 244, 248, 0.92)),
+        #ffffff;
+    }
+
+    .hero-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(22, 32, 51, 0.08);
+      box-shadow: 0 18px 38px rgba(22, 32, 51, 0.08);
+    }
+
+    .hero-card--image {
+      padding: 0;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .hero-card--image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card__label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .hero-card__value {
+      margin-top: 14px;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .section {
+      margin-top: 28px;
+      padding: 36px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .section-head p {
+      max-width: 56ch;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid--three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: var(--surface-strong);
+      border: 1px solid rgba(22, 32, 51, 0.08);
+    }
+
+    .product-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card p,
+    .feature-list li,
+    .timeline li {
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 90, 54, 0.12);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .feature-list,
+    .timeline {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+    }
+
+    .feature-list li,
+    .timeline li {
+      position: relative;
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .feature-list li::before,
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      transform: translateY(-50%);
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .workflow-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(232, 244, 248, 0.76));
+      border: 1px solid rgba(22, 32, 51, 0.08);
+    }
+
+    .workflow-card strong {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--brand-dark);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 36px;
+      margin-top: 28px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #14213d 0%, #0b6d85 100%);
+      color: #fff;
+      box-shadow: 0 26px 60px rgba(20, 33, 61, 0.24);
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 56ch;
+    }
+
+    .site-footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .site-footer__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(22, 32, 51, 0.08);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .workflow,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .grid--three {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .section,
+      .cta {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-header__inner,
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .site-nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Emberloom home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>Emberloom</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="./index.html" aria-current="page">Product</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="panel hero-copy">
+          <span class="eyebrow">Product Lineup</span>
+          <h1>Produk AI yang siap dipakai, bukan sekadar konsep.</h1>
+          <p class="lead">
+            Halaman ini merangkum solusi inti Emberloom untuk otomasi tim, orkestrasi agent, support, dan reporting. Semua dibuat untuk tim yang butuh implementasi cepat dengan pengalaman yang tetap rapi.
+          </p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="../contact.html">Schedule demo</a>
+            <a class="button button--secondary" href="#catalog">Lihat katalog</a>
+          </div>
+          <div class="hero-stats" aria-label="Product highlights">
+            <div class="stat">
+              <strong>4</strong>
+              <span>Core products</span>
+            </div>
+            <div class="stat">
+              <strong>14 hari</strong>
+              <span>Typical rollout sprint</span>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <span>Automation coverage</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel hero-visual" aria-label="Product snapshot">
+          <div class="hero-card hero-card--image">
+            <img src="../assets/images/DXfOsleNgbkx2P2iCFSWIjtgh8s-c217312944.jpg" alt="Dashboard interface preview">
+          </div>
+          <div class="hero-card">
+            <span class="hero-card__label">Top adoption use case</span>
+            <div class="hero-card__value">Ops Command Hub</div>
+            <p>Single workspace for automation runs, incident handling, approvals, and reporting summaries.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel section" id="catalog">
+        <div class="section-head">
+          <div>
+            <h2>Product catalog</h2>
+          </div>
+          <p>Setiap produk dirancang modular, jadi bisa diambil satu per satu atau digabung dalam satu delivery stack.</p>
+        </div>
+        <div class="grid grid--three">
+          <article class="product-card">
+            <span class="tag">Operations</span>
+            <h3>Ops Command Hub</h3>
+            <p>Panel operasional untuk memonitor automation runs, SLA, eskalasi, dan approval task dari satu tempat.</p>
+            <ul class="feature-list">
+              <li>Live workflow status</li>
+              <li>Exception inbox</li>
+              <li>Weekly executive recap</li>
+            </ul>
+          </article>
+          <article class="product-card">
+            <span class="tag">Support</span>
+            <h3>Support Pilot</h3>
+            <p>AI support layer untuk menjawab pertanyaan berulang, melakukan triage, dan meneruskan kasus kompleks ke agent manusia.</p>
+            <ul class="feature-list">
+              <li>Smart conversation routing</li>
+              <li>Knowledge-grounded answers</li>
+              <li>Ticket summarization</li>
+            </ul>
+          </article>
+          <article class="product-card">
+            <span class="tag">Revenue</span>
+            <h3>Growth Sequence Engine</h3>
+            <p>Mesin campaign dan follow-up untuk inbound lead, nurturing sequence, serta handoff ke sales pipeline.</p>
+            <ul class="feature-list">
+              <li>Lead qualification logic</li>
+              <li>Multi-step outreach</li>
+              <li>CRM sync workflow</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <div>
+            <h2>How the stack works</h2>
+          </div>
+          <p>Kami biasanya memulai dari satu proses yang paling mahal secara waktu, lalu memperluas coverage setelah baseline-nya stabil.</p>
+        </div>
+        <div class="workflow">
+          <article class="workflow-card">
+            <strong>Phase 01</strong>
+            <h3>Map the workflow</h3>
+            <ul class="timeline">
+              <li>Audit process bottleneck dan repetitive task</li>
+              <li>Definisikan sources of truth dan approval path</li>
+              <li>Pilih product modules yang paling relevan</li>
+            </ul>
+          </article>
+          <article class="workflow-card">
+            <strong>Phase 02</strong>
+            <h3>Ship the operating layer</h3>
+            <ul class="timeline">
+              <li>Deploy dashboard, triggers, dan reporting blocks</li>
+              <li>Uji exceptions dan fallback manual</li>
+              <li>Iterasi dari usage data dan feedback tim</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <div>
+          <h2 id="cta-title">Perlu halaman produk yang lanjut ke implementasi nyata?</h2>
+          <p>Kita bisa sambungkan halaman ini ke demo request, pricing, atau detail per produk berikutnya tanpa harus tergantung lagi ke shell Framer yang kosong.</p>
+        </div>
+        <a class="button button--primary" href="../contact.html">Talk to us</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Emberloom. Product overview page.</span>
+      <span><a href="../index.html">Back to home</a></span>
+    </div>
+  </footer>
+<div id="__framer-badge-container" style="display: none;"></div></body>
+</html>
